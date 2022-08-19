@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 const Counter = () => {
     const [count, setCount] = useState(0);
     function increment() {
-        setLikes(likes + 1)
+        setCount(count + 1)
     }
     function decrement() {
-        setLikes(likes - 1)
+        setCount(count - 1)
     }
 
     return (
