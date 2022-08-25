@@ -3,6 +3,7 @@ import ClassCounter from './components/ClassCounter';
 import Counter from './components/Counter';
 import PostList from './components/PostList';
 import PostItem from './components/post_item';
+import MyButton from './components/UI/button/MyButton';
 import './styles/App.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       <form>
         <input type="text" placeholder='Название поста' />
         <input type="text" placeholder='Описание поста' />
-        <button>Создать пост</button>
+        <MyButton disabled>Создать пост</MyButton>
       </form>
       <PostList posts={posts} title="Посты про JS" />
     </div>
