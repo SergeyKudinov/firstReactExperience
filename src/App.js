@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import ClassCounter from './components/ClassCounter';
 import Counter from './components/Counter';
 import PostList from './components/PostList';
@@ -21,15 +21,12 @@ function App() {
 
   const [searchQuery, setSearchQuery] = useState('')
 
-  function getSortedPosts() {
-    console.log("Fuck you");
+  const sortedPosts = useMemo(() => {
     if (selectedSort) {
       return [...posts].sort((a, b) => a[selectedSort].localeCompare(b[selectedSort]))
     }
     return posts;
-  }
-
-  const sortedPosts = getSortedPosts();
+  }, []);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
